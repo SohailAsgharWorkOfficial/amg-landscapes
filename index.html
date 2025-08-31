@@ -335,35 +335,41 @@ html, body {
 
 .testimonial-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns */
     gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
-
 .testimonial-card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 20px;
-    text-align: left;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: row; /* Image left, text + author right */
+    gap: 20px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    align-items: flex-start;
 }
 
 .testimonial-img {
-    width: 100%;
-    height: 180px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     border-radius: 8px;
-    margin-bottom: 15px;
+}
+
+.testimonial-content {
+    display: flex;
+    flex-direction: column; /* Text on top, author below */
+    justify-content: flex-start;
 }
 
 .testimonial-text {
-    font-size: 1rem;
+    font-size: 10.3px;
     color: #555;
-    margin-bottom: 15px;
+    width: 229.99px;
+    height: 129.33px;
+    margin-bottom: 15px; /* Space before author */
     line-height: 1.5;
 }
 
@@ -403,10 +409,112 @@ html, body {
 }
 
 .view-all-btn:hover {
-    background: #1c3040;
+    background: #ffffffff;
 }
 
 {% comment %} testimonial end {% endcomment %}
+
+{% comment %} faq start {% endcomment %}
+ .faq-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 80px;
+  gap: 60px;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.faq-left {
+  flex: 1 1 40%;
+  min-width: 300px;
+}
+
+.faq-left h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.faq-left p {
+  font-size: 1rem;
+  margin-bottom: 30px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.cta-button {
+  padding: 14px 24px;
+  background-color: #0c1c36;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #1a2c4d;
+}
+
+.faq-right {
+  flex: 1 1 50%;
+  min-width: 300px;
+}
+
+.faq-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 20px 0;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+}
+
+.faq-question::after {
+  content: "⌄";
+  position: absolute;
+  right: 0;
+  font-size: 1rem;
+  transition: transform 0.3s;
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  color: #444;
+  padding: 0 0;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px; /* Adjust if answers are longer */
+  opacity: 1;
+  padding: 10px 0 20px;
+}
+
+.faq-question::after {
+  content: "⌄";
+  position: absolute;
+  right: 0;
+  font-size: 1rem;
+  transition: transform 0.3s;
+}
+
+.faq-item.active .faq-question::after {
+  transform: rotate(180deg);
+}
+
+{% comment %} faq end {% endcomment %}
 </style>
 <div class="row" >
   <div class="column1" style="background-color:#2f5734;">
@@ -525,7 +633,7 @@ html, body {
         
         <!-- Testimonial Card -->
         <div class="testimonial-card">
-            <img src="image1.jpg" alt="Project Image" class="testimonial-img">
+            <img src="t1.png" alt="Project Image" class="testimonial-img">
             <p class="testimonial-text">
                 "It really saves me time and effort. Abstract is exactly what our business has been lacking.
                 I'm good to go. Thank you for making it painless, pleasant and most of all hassle free!"
@@ -539,7 +647,7 @@ html, body {
         </div>
 
         <div class="testimonial-card">
-            <img src="image2.jpg" alt="Project Image" class="testimonial-img">
+            <img src="t2.png" alt="Project Image" class="testimonial-img">
             <p class="testimonial-text">
                 "I've been investing in real estate for years, and has consistently provided me with valuable insights and opportunities."
             </p>
@@ -558,5 +666,86 @@ html, body {
         <button class="view-all-btn">Get Started with a Free Consultation</button>
     </div>
 </section>
+
+<section class="faq-section">
+    <div class="faq-left">
+      <h2>Frequently Asked Questions</h2>
+      <p>At AMG Landscapes, we turn outdoor spaces into stunning, functional landscapes. With expert care and creative design, we bring your vision to life.</p>
+      <button class="cta-button">Get Started with a Free Consultation</button>
+    </div>
+    <div class="faq-right">
+  <div class="faq-item">
+    <button class="faq-question">What types of renovation services do you offer?</button>
+    <div class="faq-answer">
+      We offer landscape design, hardscaping, garden planning, outdoor lighting, and more.
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Do you provide free estimates?</button>
+    <div class="faq-answer">
+      Yes, we provide free, no-obligation estimates for all our services.
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">How long will my renovation take?</button>
+    <div class="faq-answer">
+      The timeline depends on the project scope, but most renovations take 1-3 weeks.
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Are the product colors on the website accurate?</button>
+    <div class="faq-answer">
+      We strive for accuracy, but actual colors may vary due to screen differences and natural materials.
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Can I live in my house during the renovation?</button>
+    <div class="faq-answer">
+      Yes, in most cases. We work with you to minimize disruptions during the renovation process.
+    </div>
+  </div>
+</div>
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+  const questions = document.querySelectorAll('.faq-question');
+
+  questions.forEach(button => {
+    button.addEventListener('click', () => {
+      const faqItem = button.parentElement;
+      faqItem.classList.toggle('active');
+
+      // Optional: close others
+      document.querySelectorAll('.faq-item').forEach(item => {
+        if (item !== faqItem) {
+          item.classList.remove('active');
+        }
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
