@@ -347,7 +347,7 @@ html, body {
 .testimonials {
     text-align: center;
     padding: 60px 20px;
-    background: #ffffffff;
+    background: #fff;
     font-family: Arial, sans-serif;
 }
 
@@ -360,20 +360,23 @@ html, body {
 
 .testimonial-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns */
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
     gap: 20px;
     max-width: 1200px;
+    height:250px;
     margin: 0 auto;
 }
+
 .testimonial-card {
     display: flex;
-    flex-direction: row; /* Image left, text + author right */
+    flex-direction: row; /* image left, text + author right */
     gap: 20px;
     background: #fff;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     align-items: flex-start;
+    text-align: left;
 }
 
 .testimonial-img {
@@ -381,28 +384,29 @@ html, body {
     height: 150px;
     object-fit: cover;
     border-radius: 8px;
+    flex-shrink: 0; /* stop shrinking */
 }
 
 .testimonial-content {
     display: flex;
-    flex-direction: column; /* Text on top, author below */
-    justify-content: flex-start;
+    flex-direction: column; /* text above, author below */
+    justify-content: space-between;
+    flex: 1;
 }
 
 .testimonial-text {
-    font-size: 10.3px;
+    font-size: 13px;
     color: #555;
-    width: 229.99px;
-    height: 129.33px;
-    margin-bottom: 15px; /* Space before author */
+    margin-bottom: 15px;
     line-height: 1.5;
+    /* ❌ remove fixed width/height */
 }
 
 .testimonial-author {
     display: flex;
-    flex-direction: row;
     align-items: center;
     gap: 10px;
+    margin-top: auto; /* push author to bottom */
 }
 
 .author-img {
@@ -437,6 +441,25 @@ html, body {
 .view-all-btn:hover {
     background: rgb(19, 123, 11);
 }
+
+/* ✅ Responsive Fix */
+@media (max-width: 768px) {
+    .testimonial-container {
+        grid-template-columns: 1fr; /* single column */
+    }
+
+    .testimonial-card {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .testimonial-content {
+        align-items: center;
+        text-align: center;
+    }
+}
+
 {% comment %} testimonial end {% endcomment %}
 
 {% comment %} faq start {% endcomment %}
