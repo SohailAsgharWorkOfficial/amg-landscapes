@@ -2,7 +2,9 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
+
 html, body {
   margin: 0;
   padding: 0;
@@ -10,6 +12,85 @@ html, body {
   height: 100%;
   font-family: Lato, sans-serif;
 }
+
+{% comment %} Header Code Start {% endcomment %}
+/* Create three equal columns that floats next to each other */
+.column1 {
+  float: left;
+  width: 30%;
+  height: 80px; /* Should be removed. Only for demonstration */
+}
+.column2 {
+  float: left;
+  width: 55%;
+  height: 80px; /* Should be removed. Only for demonstration */
+  background-color: transparent;
+}
+.column3 {
+  display: flex;
+  align-items: center;      /* icon aur text vertically center hon */
+  background-color: #6f9e01;
+  padding: 10px;
+  
+  width: cover;
+  height: 60px;
+}
+
+.column3 img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.column3 .text-box {
+  display: flex;
+  flex-direction: column;   /* saare p ek column me */
+}
+
+.column3 p {
+  margin: 0;
+  color: white;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+
+.column4 {
+  float: left;
+  width: 50%;
+  height: 40px; /* Should be removed. Only for demonstration */
+  position: relative;
+}
+
+.column5 {
+  float: left;
+  width: 50%;
+  height: 40px; /* Should be removed. Only for demonstration */
+  position: relative;
+}
+.column6 {
+  float: left;
+  width: 50%;
+  height: 40px; /* Should be removed. Only for demonstration */
+  position: relative;
+}
+.column7 {
+  float: left;
+  width: 50%;
+  height: 40px; /* Should be removed. Only for demonstration */
+  position: relative;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.logo-img {
+  padding-left: 20px; 
+}
+{% comment %} Header Code End {% endcomment %}
+
 {% comment %} home code start {% endcomment %}
 .container {
   position: relative;
@@ -99,62 +180,6 @@ html, body {
   font-weight: 400; 
 }
 {% comment %} below slider end {% endcomment %}
-
-{% comment %} Header Code Start {% endcomment %}
-/* Create three equal columns that floats next to each other */
-.column1 {
-  float: left;
-  width: 30%;
-  height: 80px; /* Should be removed. Only for demonstration */
-}
-.column2 {
-  float: left;
-  width: 55%;
-  height: 80px; /* Should be removed. Only for demonstration */
-  background-color: transparent;
-}
-.column3 {
-  float: left;
-  width: 15%;
-  height: 80px; /* Should be removed. Only for demonstration */
-}
-
-.column4 {
-  float: left;
-  width: 50%;
-  height: 40px; /* Should be removed. Only for demonstration */
-  position: relative;
-}
-
-.column5 {
-  float: left;
-  width: 50%;
-  height: 40px; /* Should be removed. Only for demonstration */
-  position: relative;
-}
-.column6 {
-  float: left;
-  width: 50%;
-  height: 40px; /* Should be removed. Only for demonstration */
-  position: relative;
-}
-.column7 {
-  float: left;
-  width: 50%;
-  height: 40px; /* Should be removed. Only for demonstration */
-  position: relative;
-}
-
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.logo-img {
-  padding-left: 20px; 
-}
-{% comment %} Header Code End {% endcomment %}
 
 {% comment %} Services Section Start {% endcomment %}
  .services-section {
@@ -375,6 +400,7 @@ html, body {
 
 .testimonial-author {
     display: flex;
+    flex-direction: row;
     align-items: center;
     gap: 10px;
 }
@@ -409,9 +435,8 @@ html, body {
 }
 
 .view-all-btn:hover {
-    background: #ffffffff;
+    background: rgb(19, 123, 11);
 }
-
 {% comment %} testimonial end {% endcomment %}
 
 {% comment %} faq start {% endcomment %}
@@ -513,9 +538,213 @@ html, body {
 .faq-item.active .faq-question::after {
   transform: rotate(180deg);
 }
-
 {% comment %} faq end {% endcomment %}
+
+{% comment %} articles section start {% endcomment %}
+    .articles-section {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .articles-section h2 {
+      font-size: 28px;
+      color: #333;
+    }
+
+    .articles-section p {
+      max-width: 650px;
+      margin: 10px auto 40px;
+      color: #666;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .articles-container {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    .article-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      width: 300px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      text-align: left;
+      transition: transform 0.3s ease;
+    }
+
+    .article-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .article-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .article-content {
+      padding: 20px;
+    }
+
+    .article-content .date {
+      color: #00a86b;
+      font-size: 14px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .article-content h3 {
+      font-size: 18px;
+      margin: 8px 0;
+      color: #222;
+    }
+
+    .article-content p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .article-content a {
+      color: #00a86b;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .view-all-btn1 {
+      margin-top: 40px;
+    }
+
+    .view-all-btn1 button {
+      padding: 12px 30px;
+      border-radius: 25px;
+      border: none;
+      background: #fff;
+      color: #333;
+      font-size: 15px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: background 0.3s ease;
+    }
+
+    .view-all-btn1 button:hover {
+      background: #f3f3f3;
+    }
+ {% comment %} artcle section end {% endcomment %}
+
+  {% comment %} footer start {% endcomment %}
+     footer {
+      background: #1f1f1f;
+      color: #ddd;
+      padding: 40px 20px 20px;
+    }
+
+    .footer-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .footer-column {
+      flex: 1;
+      min-width: 180px;
+      margin: 15px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li {
+      margin: 8px 0;
+    }
+
+    .footer-column ul li a {
+      color: #ddd;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .footer-column ul li a:hover {
+      color: #77c043; /* green hover */
+    }
+
+    .footer-logo {
+      text-align: center;
+      flex: 1;
+      min-width: 600px;
+      margin: 15px;
+    }
+
+    .footer-logo img {
+      width: 450px;
+      margin-bottom: 10px;
+    }
+
+    .footer-logo h2 {
+      color: #77c043;
+      margin: 0;
+      font-size: 18px;
+    }
+
+    .footer-contact {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #444;
+      margin-top: 30px;
+      padding-top: 20px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .footer-contact .info {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    .footer-contact .info a {
+      color: #ddd;
+      text-decoration: none;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 15px;
+    }
+
+    .footer-social a {
+      color: #ddd;
+      font-size: 18px;
+      text-decoration: none;
+    }
+
+    .footer-social a:hover {
+      color: #77c043;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      border-top: 1px solid #444;
+      margin-top: 20px;
+      padding-top: 15px;
+      font-size: 13px;
+      color: #aaa;
+    }
+    {% comment %} footer end {% endcomment %}
+
 </style>
+
 <div class="row" >
   <div class="column1" style="background-color:#2f5734;">
 <img src="amg-logo-removebg-preview.png" alt="Italian Trulli"  width="150px" height="80px" class="logo-img">
@@ -523,21 +752,21 @@ html, body {
   <div class="column2" style="background-color: transparent;">
    
 <div class="row">
-  <div class="column4" style="background-color: blue">
+  <div class="column4" style="background-color: rgb(255, 255, 255)">
 <img src="home.svg" alt="Italian Trulli"  width="35px" height="35px" style="padding-left: 49%; padding-top: 2px;">
  
   </div>
-  <div class="column5" style="background-color: red;">
+  <div class="column5" style="background-color: rgb(255, 255, 255)">
 <img src="services.svg" alt="Italian Trulli" width="38px" height="38px" style="padding-left: 49%; padding-top: 2px;">
 
   </div>
 </div>
   <div class="row">
-  <div class="column6" style="background-color: transparent;">
+  <div class="column6" style="background-color: rgb(255, 255, 255)">
 <img src="areas.png" alt="Italian Trulli"  width="70px" style="padding-left: 45%; padding-top: 4px; ">
 
     </div>
-  <div class="column7" style="background-color: transparent;">
+  <div class="column7" style="background-color: rgb(255, 255, 255)">
 <img src="company.png" alt="Italian Trulli"  width="60px"  style="padding-left: 46%; padding-top: 5px;">
 
   </div>
@@ -545,10 +774,13 @@ html, body {
 
   </div>
   <div class="column3" style="background-color:#6f9e01  ">
-    <img src="dialer.svg" alt="Italian Trulli"  width="20px" >
-   <p style="padding-left: 15px; color: white;">Call Now:</p>
-   <p style="padding-left: 15px; color: white;">(123) 967-3936</p>
+    <img src="dialer.svg" alt="Italian Trulli"  width="15px" >
+   <div class="text-box">
+    <p>Call Now:</p>
+    <p>(123) 967-3936</p>
   </div>
+  </div>
+ 
 </div>
 </head>
 <body>
@@ -575,6 +807,7 @@ html, body {
     <img src="slider4.png" alt="Image 4">
     <img src="slider5.png" alt="Image 5">
     <img src="slider6.png" alt="Image 6">
+    <img src="slider7.png" alt="Image 7">
     
   </div>
 </div>
@@ -662,7 +895,7 @@ html, body {
         <!-- Add more cards as needed -->
 
     </div>
-    <div class="cta-button">
+    <div >
         <button class="view-all-btn">Get Started with a Free Consultation</button>
     </div>
 </section>
@@ -706,8 +939,107 @@ html, body {
   </div>
 </div>
 
+</section>
+
+ <section class="articles-section">
+    <h2>New Articles and Knowledge</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus hendrerit suscipit egestas. 
+       Nunc eget congue ante. Vivamus ut sapien et ex volutpat tincidunt eget at felis vivamus hendrerit.</p>
+
+    <div class="articles-container">
+      <!-- Card 1 -->
+      <div class="article-card">
+        <img src="https://picsum.photos/id/1018/400/250" alt="Pollinator Garden">
+        <div class="article-content">
+          <span class="date">10 October 2024</span>
+          <h3>Creating a Pollinator Friendly Garden</h3>
+          <p>Vivamus accumsan diam eget ultricies auctor. Proin iaculis metus vel condimentum tincidunt.</p>
+          <a href="#">Read More...</a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="article-card">
+        <img src="https://picsum.photos/id/1025/400/250" alt="Cost Effective Projects">
+        <div class="article-content">
+          <span class="date">18 October 2024</span>
+          <h3>Tips for Cost-Effective Projects</h3>
+          <p>Vivamus accumsan diam eget ultricies auctor. Proin iaculis metus vel condimentum tincidunt.</p>
+          <a href="#">Read More...</a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="article-card">
+        <img src="https://picsum.photos/id/1036/400/250" alt="Landscaping">
+        <div class="article-content">
+          <span class="date">29 October 2024</span>
+          <h3>Landscaping for Increased Home Value</h3>
+          <p>Vivamus accumsan diam eget ultricies auctor. Proin iaculis metus vel condimentum tincidunt.</p>
+          <a href="#">Read More...</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="view-all-btn1">
+      <button>View All Packages →</button>
+    </div>
   </section>
 
+  <footer>
+    <div class="footer-container">
+      <!-- Left Column -->
+      <div class="footer-column">
+        <ul>
+          <li><a href="#">Explore Packages</a></li>
+          <li><a href="#">Design Gallery</a></li>
+          <li><a href="#">Trending Cities</a></li>
+          <li><a href="#">Before & After</a></li>
+        </ul>
+      </div>
+
+      <!-- Center Logo -->
+      <div class="footer-logo">
+        <img src="footer.png" alt="Logo">
+        
+      </div>
+
+      <!-- Right Column -->
+      <div class="footer-column">
+        <ul>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">How it Works</a></li>
+          <li><a href="#">Reviews</a></li>
+          <li><a href="#">FAQs</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Contact + Social -->
+    <div class="footer-contact">
+      <div class="info">
+        <span>📧 <a href="mailto:hello@amglandscapes.com">hello@amglandscapes.com</a></span>
+        <span>📞 (123) 967-3936</span>
+      </div>
+      <div class="footer-social">
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+        <a href="#"><i class="fab fa-pinterest"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <!-- Bottom Text -->
+    <div class="footer-bottom">
+      © 2025 AMG Landscapes Inc. All Rights Reserved | 
+      <a href="#" style="color:#77c043;">Privacy Policy</a> | 
+      <a href="#" style="color:#77c043;">Terms of Use</a>
+    </div>
+  </footer>
 
 
 
@@ -728,7 +1060,7 @@ html, body {
 
 
 
-
+<!-- faq script -->
   <script>
   const questions = document.querySelectorAll('.faq-question');
 
