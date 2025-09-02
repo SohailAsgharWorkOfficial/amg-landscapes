@@ -48,12 +48,40 @@ html, body {
 }
 
 
-.column4 {
+/* .column4 {
   float: left;
   width: 50%;
-  height: 40px; /* Should be removed. Only for demonstration */
+  height: 40px; 
   position: relative;
+} */
+  .column4 {
+  float: left;
+  width: 50%;        /* jitni white chahiye utni black ho jayegi */
+  height: 40px;      
+  position: relative;
+  background-color: #ffffff; /* default white */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
+
+.column4 a img {
+  width: 38px;
+  height: 38px;
+  padding-left: 49%; 
+  padding-top: 2px;
+}
+
+/* hover par background black aur image change */
+.column4:hover {
+  background-color: #000; /* pura column black */
+}
+
+.column4:hover a img {
+  content: url("assets/home-hover.svg");
+}
+
 
 /* .column5 {
   float: left;
