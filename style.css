@@ -826,6 +826,7 @@ footer {
   flex-direction: column;
   gap: 8px;
   font-size: 14px;
+  padding-left: 20px;
 }
 
 .footer-contact .info a {
@@ -836,6 +837,7 @@ footer {
 .footer-social {
   display: flex;
   gap: 15px;
+  padding-right: 40px;
 }
 
 .footer-social a {
